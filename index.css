@@ -1,0 +1,333 @@
+*{
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: 'Merriweather', serif;
+    letter-spacing: 1.8px;
+}
+*::selection{
+
+    background-color: rgba(62, 152, 255, 0.164);
+}
+body{
+    margin: 0;
+    /* display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: .5fr 3fr .1 brfr 4fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav nav nav "
+    "con con con con con con con con "
+    "con1 con1 con1 con1 con1 con1 con1 con1 " */
+}
+.nav{ 
+    position: sticky;
+    top: 0;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: nav;
+    box-shadow: black 0px 0px 4px;
+    /* border-bottom: black 0.10px solid; */
+    font-weight: 500;
+    font-size: 20px;
+    z-index: 1000;
+    opacity: .85;
+}
+.logo{
+    display: flex;
+    cursor: pointer;
+}
+#logo{
+    margin-top: 8px;
+    width: 40px;
+    height: 45px;
+    margin-right: 5px;
+    mix-blend-mode: multiply;
+}
+.logo:hover{
+    animation-name: logo;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+}
+@keyframes logo {
+    50%{
+        transform: scale(1.3) rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg) scale(1);    
+    }
+    
+}
+#ul{
+    list-style: none;
+    display: flex;
+}
+#ul li {
+    margin-right: 30px;
+    color: rgb(172, 172, 172);
+    transition: border-bottom .25s;
+    transform-origin: left bottom;
+    cursor: pointer;
+    position: relative;
+    transition-delay: .25s;
+    transition-timing-function:linear;
+}
+#ul li:hover,#ul li a:hover{
+    color: #f23978 !important; 
+}
+#ul li::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #f23978;
+    left: 0;
+
+    transition: width .60s;
+}
+#ul li:hover:after {
+    width: 100%;
+}
+#log{
+    padding: 5px;
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    border-radius: 16px;
+    border:3px solid #111;
+    color: black;
+    font-weight: 600;
+}
+#log:hover{
+    background-color: #111;
+    color: white;
+    transform: scale(1.1);
+}
+#log a:link{
+    color: inherit;
+}
+#log a:visited{
+    color: inherit;
+}
+.land{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    WIDTH: 100%;
+    height: 600px;
+    grid-area: con;
+    background-image: linear-gradient( to top, #ff476c, white,#ff476c);
+}
+#lanimg{
+
+    min-width: 200px;
+    max-width: 400px;
+    max-height: 400px;
+    min-height: 300px;
+    animation-duration: 3s;
+    animation-name: up-down;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+@keyframes up-down {
+    to{
+        opacity: .7;
+        transform: scale(1.05) translate(0,20px);
+    }
+}
+.par{
+    margin-right: 20px;
+}
+.par ul{
+    list-style: none;
+    margin-bottom: 20px;
+}
+.par ul li ul li{
+    color: rgb(49, 49, 49);
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.but{
+    font-size: 25px;
+    border: solid #f23978 2.5px;
+    padding: 8px;
+    border-radius: 100px;
+    transition-duration: .60s;
+    transition-property: box-shadow;
+    cursor: pointer;
+    box-shadow: #f23978 0 0 0 0 inset,0px 0px 2px #f0f0f0;
+    background: transparent;
+    outline: none;
+    width: 170px;
+    font-weight:400;
+    letter-spacing: 2.5px;
+
+}
+#ul li a{
+    color: rgb(172, 172, 172);
+}
+.a:link{
+    text-decoration: none;
+}
+.a{
+
+position: absolute;
+left: 20%;
+top: 65%;
+
+}
+/* .a:visited{
+    color: black;
+}
+.a:visited:hover{
+    color: white;
+} */
+.but:hover{
+    box-shadow: 200px 0 00 #f23978 inset ;
+    color: white;
+}
+.container{
+
+    margin-top: 50px;
+    text-align: center;
+
+
+}
+#img{
+    width: 200px;
+    height: 200px;
+
+}
+.head{
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color:white;
+    background-image: linear-gradient(to top, #d84315,#ef2d5f,#d84315);
+}
+.head img{
+    width: 200px;
+    height: 200px;
+    transform:  rotateY(180deg) rotateZ(15deg) scale(1.1);
+    perspective: 600px;
+}
+a:link{
+    text-decoration: none;
+}
+.prods{
+    margin: 30px 10% ;
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: repeat(4,22%);
+    grid-template-rows: repeat(2,1fr);
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 16px;
+}
+.prod img{
+    width: 150px;
+    height: 150px;
+}
+.prod{
+    background-color: rgb(255, 255, 255);
+margin-top: 20px;
+margin-bottom: 20px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    padding: 3px 1px 1px 2.5px;
+    box-shadow: 0px 0px 3px black;
+    transition-duration: .5s;
+    transition-property: transform;
+}
+.prod::after{
+    transition: height,width .5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:0 ;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 0;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    background-color: #dd3d1dde;
+    word-wrap: break-word;
+    content: "";
+    
+}
+.prod:hover:after{
+    width: 100%;
+    height: 165px;
+    visibility: visible;
+    
+}
+.prod:hover{
+    transform: translate(0px,-16px);
+}
+
+.prod #span{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 2;
+    visibility: hidden;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition-delay: 3s;
+    transition: display,visiblity 1s;
+    font-size: 12px;
+}
+.prod:hover > #span{
+    visibility: visible;
+}
+h5{
+    margin-top: 8px;
+    color: rgb(31, 31, 31);
+}
+h4{
+    margin-bottom: 5px;
+}
+
+.fot{
+    background-color: rgb(22, 22, 22);
+    color: grey;
+    text-align: center;
+    padding: 12px;
+}
+.fot span{
+    color: white;
+    font-size: 22px;
+}
+.prod a:visited{
+    color: black;
+
+}
+.prod a:link{
+    color: black;
+}
+.prod a::after{
+    content: "get it";
+    position: absolute;
+    right: 20px;
+    bottom: 28%;
+    background-color: #212121;
+    border-radius: 50%;
+    padding: 8px;
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+    z-index: 6;
+    color: white;
+    font-weight: 500;
+}

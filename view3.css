@@ -1,0 +1,21 @@
+.con h3::after{
+    position: absolute;
+    content: "";
+    background-color: rgb(77, 77, 77);
+    width: 30px;
+    height: 30px;
+    left: 90px;
+    bottom: -35px;
+    border-radius: 50%;
+    
+}
+.con h3::before{
+    position: absolute;
+    content: "";
+    background-color: #141414;
+    width: 30px;
+    height: 30px;
+    left: 145px;
+    bottom: -35px;
+    border-radius: 50%;
+}
